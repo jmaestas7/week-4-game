@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+	// declares variables, sets gamestart to initial false, guess to 0, wins & losses to 0, displays instruction string.
 	var crystalArray = ["crystal1", "crystal2", "crystal3", "crystal4"];
 	var crystArrNum = [];
 	var gamestart = false;
@@ -8,6 +8,9 @@ $( document ).ready(function() {
 	var wins = 0;
 	var losses = 0;
 
+	// reset crystal values, reset to be guessed value. Push random num 1-12 to array (new crystal values).
+	//Create new to be guess sum 19-120. push to html (pushTot: 49).
+	// displays total value
 	function getRand(){
 		crystArrNum = [];
 		crystGuess = 0;
@@ -20,27 +23,29 @@ $( document ).ready(function() {
 		pushTot();
 	}
 
+	// adds crystal value to current total. Only if a value has been determined. if total matches, run reset add to win var.
+	// if loss, add to loss value. run reset and initial function (getRand: 14).
+	// hides total value on 33 after adding starts.
 	function addCryst(val) {
 		if (crystSum > 0) {
 			crystGuess = crystGuess + val;
-			pushGuess();
+			pushTot();
 			$("#total").css("display", "none");
 			if (crystSum === crystGuess) {
-				wins = wins + 1;
+				wins++;
 				alert("You are the crystal master!");
-				pushTot();
 				getRand();
 			}
 
 			else if (crystSum < crystGuess) {
-				losses = losses + 1;
+				losses++;
 				alert("Sorry, stick to youyr dayjob!");
-				pushTot()
 				getRand();
 			}
 		}
 	}
 
+	// push to html function (guess, total, wins and losses)
 	function pushTot() {
 		$("#total").html(crystSum);
 		$("#guess").html("Your total: " + crystGuess);
@@ -48,18 +53,16 @@ $( document ).ready(function() {
 		$("#losses").html("Losses: " + losses);
 	}
 
-	function pushGuess() {
-		$("#guess").html("Your total: " + crystGuess);
-	}
-
+	// pushes initial values to html (pushTot: 49)
 	pushTot();
 
+	// reset button, run reset and initial fucnction (getRand: 14). (just like start button but ignores gamestart conditional)
 	$("#reset").click(function(){
   	getRand();
   	gamestart = true;
-  	pushTot();
 	});
 
+	// start button, run reset and initial fucnction (getRand: 14). Will not run if gamestart is true, will set gamestart to true.
 	$("#start").click(function(){
 		if(!gamestart) {
 			getRand();
@@ -67,18 +70,22 @@ $( document ).ready(function() {
 		gamestart = true;
 	});
 
+	// on click 1st crystal, pulls from rand value of crystal array relevant to clicked crystal and runs add fucnction (addCryst: 29).
 	$("#crystal1").click(function(){
 		addCryst(crystArrNum[0]);
 	});
 
+	// on click 2nd crystal, pulls from rand value of crystal array relevant to clicked crystal and runs add fucnction (addCryst: 29).
 	$("#crystal2").click(function(){
 		addCryst(crystArrNum[1]);
 	});
 
+	// on click 3rd crystal, pulls from rand value of crystal array relevant to clicked crystal and runs add fucnction (addCryst: 29).
 	$("#crystal3").click(function(){
 		addCryst(crystArrNum[2]);
 	});
 
+	// on click 4th crystal, pulls from rand value of crystal array relevant to clicked crystal and runs add fucnction (addCryst: 29).
 	$("#crystal4").click(function(){
 		addCryst(crystArrNum[3]);
 	});

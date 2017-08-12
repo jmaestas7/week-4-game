@@ -20,12 +20,11 @@ button {
 	margin: 0 auto;
 	text-align: center;
 	z-index: 0;
-	margin: 30px 20px 70px 20px;
+	margin: 30px 25px 70px 25px;
 }
 
 .crystalimg {
 	width: 19%;
-	margin: 0 auto;
 	overflow: auto;
 	padding: 2%;
 	z-index: 1;
