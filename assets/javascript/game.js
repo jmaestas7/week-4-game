@@ -4,7 +4,7 @@ $( document ).ready(function() {
 	var crystArrNum = [];
 	var gamestart = false;
 	var crystGuess = 0;
-	var crystSum;
+	var crystSum = "Press Start";
 	var wins = 0;
 	var losses = 0;
 
@@ -21,35 +21,38 @@ $( document ).ready(function() {
 	}
 
 	function addCryst(val) {
-		crystGuess = crystGuess + val;
-		pushGuess();
-		$("#total").css("display", "none");
-		if (crystSum === crystGuess) {
-			wins = wins + 1;
-			alert("You are the crystal master!");
-			pushTot();
-			getRand();
-		}
+		if (crystSum > 0) {
+			crystGuess = crystGuess + val;
+			pushGuess();
+			$("#total").css("display", "none");
+			if (crystSum === crystGuess) {
+				wins = wins + 1;
+				alert("You are the crystal master!");
+				pushTot();
+				getRand();
+			}
 
-		else if (crystSum < crystGuess) {
-			losses = losses + 1;
-			alert("Sorry, stick to youyr dayjob!");
-			pushTot()
-			getRand();
+			else if (crystSum < crystGuess) {
+				losses = losses + 1;
+				alert("Sorry, stick to youyr dayjob!");
+				pushTot()
+				getRand();
+			}
 		}
-
 	}
 
 	function pushTot() {
 		$("#total").html(crystSum);
-		$("#guess").html(crystGuess);
+		$("#guess").html("Your total: " + crystGuess);
 		$("#wins").html("Wins: " + wins);
 		$("#losses").html("Losses: " + losses);
 	}
 
 	function pushGuess() {
-		$("#guess").html(crystGuess);
+		$("#guess").html("Your total: " + crystGuess);
 	}
+
+	pushTot();
 
 	$("#reset").click(function(){
   	getRand();

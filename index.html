@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Crystal Game</title>
+	<title>Crystal Collector</title>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="assets/javascript/game.js"></script>
 <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Patua+One|Sedgwick+Ave" rel="stylesheet">
 <body>
-		<div class="container">
-		<button id="start">Start</button>
-		<button id="reset">Reset</button>
-		</div>
 
 		<div class="container">
+			<div id="titlebox">Crystal Collector</div>
+			<div id="gameinfo"> Click start to begin the game.<p>You will given a random number from 19 to 120.<p>As soon as you click start the number will disapper, don't forget it!<p>Each of the four crystal's will be assigned a hidden number. Click on the crystals to add your total guess which will start at 0.<p>Match your total guess to the random given number to win.<p>If you go over the random given amount you lose.</div>
+			<div id="total"></div>
+			<div id="wldata">
+				<div id="losses"></div>
+				<br>
+				<div id="wins"></div>
+			</div>
+			<div id="guess"></div>
 			<img src="assets/images/crystal-1.jpg" class="crystalimg" id="crystal1">
 			<img src="assets/images/crystal-2.jpg" class="crystalimg" id="crystal2">
 			<img src="assets/images/crystal-3.jpg" class="crystalimg" id="crystal3">
 			<img src="assets/images/crystal-4.jpg" class="crystalimg" id="crystal4">
-			<div id="total"></div>
-			<div id="guess"></div>
-			<div id="wins"></div>
-			<div id="losses"></div>
+			<br>
+			<button id="start">Start</button>
+			<button id="reset">Reset</button>
+			<br>
 		</div>
 
 		<div>
