@@ -1,0 +1,58 @@
+body {
+	background-image: url("../images/background.jpg");
+	width: 100%;
+}
+
+button {
+	font-size: 30px;
+}
+.crystalimg {
+	width: 21%;
+	float: left;
+	margin: 0 auto;
+	overflow: auto;
+	padding: 2%;
+}
+
+#crystal1 {
+	background-color: black;
+}
+#crystal2 {
+	background-color: purple;
+}
+#crystal3 {
+	background-color: grey;
+}
+#crystal4 {
+	background-color: red;
+}
+#total {
+	background-color: white;
+	float: left;
+	clear: both;
+	font-size: 80px;
+	padding: 20px;
+}
+#guess {
+	background-color: white;
+	float: left;
+	clear: both;
+	font-size: 80px;
+	padding: 20px;
+}
+
+#wins {
+	background-color: white;
+	float: left;
+	clear: both;
+	font-size: 80px;
+	padding: 20px;
+}
+
+#losses {
+	background-color: white;
+	float: left;
+	clear: both;
+	font-size: 80px;
+	padding: 20px;
+}
